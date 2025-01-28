@@ -4,5 +4,5 @@ nav_order: 2
 layout: default
 ---
 
-# Welcome!
+# Lab 1
 {: .fs-9 }
