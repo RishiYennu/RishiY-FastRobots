@@ -1,8 +1,8 @@
-title: Just the Docs Template
-description: A starter template for a Jeykll site using the Just the Docs theme!
+title: Rishi Yennu Fast Robots Website
+description: My website for ECE 4160 Fast Robot Lab Writeups
 theme: just-the-docs
 
-url: https://just-the-docs.github.io
+url: https://rgtrio.github.io/RishiY-FastRobots/
 
 aux_links:
-  Template Repository: https://github.com/just-the-docs/just-the-docs-template
+  Github Repository: https://github.com/RGTrio/RishiY-FastRobots/
