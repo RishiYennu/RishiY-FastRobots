@@ -14,6 +14,7 @@ For setting my computer and arduino for Lab 1A, I first needed to install the Ar
 # Blink
 {: .fs-3 }
 The first example that I needed to run on the Arduino was Blink. In order for the Blink program to properly work with the Arduino, I needed to lower the baud rate which has to do with the rate that information is transferred.
+
 [![Blink](https://img.youtube.com/vi/Z3ENXwcyciI/0.jpg)](https://www.youtube.com/watch?v=Z3ENXwcyciI)
 
 # Serial
