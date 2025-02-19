@@ -15,7 +15,7 @@ The purpose of this lab is to get introduced to the IMU and to learn how to acce
 # IMU Connection
 {: .fs-5 }
 We can see the connected Arduino to the IMU in the image below.
-![IMU](lab2pics/IMUConnection.png)
+![IMU](lab2pics/IMU_Connection.jpg)
 
 # IMU Example
 {: .fs-5 }
