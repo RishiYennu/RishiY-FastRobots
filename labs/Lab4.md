@@ -23,6 +23,9 @@ I connected the motor drivers and Artemis together according to the following di
 
 ![](lab4pics/diagram.png)
 
+# Lab 4 Tasks
+{: .fs-7 }
+
 # Connecting First Motor Driver and Oscilloscope
 {: .fs-7 }
 
