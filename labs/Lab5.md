@@ -21,13 +21,13 @@ In order to send data from the Arduino on the car to the Jupyter python library 
 
 After running the command from the notification handler and receiving the data, I processed the data by graphing the motor output and distance from the TOF sensor over the time, which can be seen in the code snippets below.
 
-[](lab5pics/dist.png)
+![](lab5pics/dist.png)
 
-[](lab5pics/speed.png)
+![](lab5pics/speed.png)
 
 On the Arduino end, as I explained before, I used the BLE String characteristic service to write the value of the four arrays I want to be sent to the Jupyter noteook, which can be seen in the code below.
 
-[](lab5pics/ard.png)
+![](lab5pics/ard.png)
 
 # Lab Tasks
 {: .fs-7 }
@@ -59,15 +59,15 @@ My implementation of the P controller is shown in the below code:
 
 First, below is the data necessary to run the controller as well the arrays of size 500 to be sent for data processing.
 
-[](lab5pics/data.png)
+![](lab5pics/data.png)
 
 Next, we have the command that is called in order to start the controller and to collect and send data.
 
-[](lab5pics/command.png)
+![](lab5pics/command.png)
 
 The command invokes the following method used for calculating and writing the motor driver output for a P controller:
 
-[](lab5pics/speedcalc.png)
+![](lab5pics/speedcalc.png)
 
 # Results
 {: .fs-5 }
@@ -78,9 +78,9 @@ Below is a video of the P controller working to reach the goal setpoint:
 
 Below are the graphs of the PWM motor output/speed and distance from the wall over time corresponding to the above video.
 
-[](lab5pics/dgraph.png)
+![](lab5pics/dgraph.png)
 
-[](lab5pics/sgraph.png)
+![](lab5pics/sgraph.png)
 
 In the graphs, we see that the distances from the wall change discretely, meaning that there is a significant difference between the frequency of the long range TOF sensor and the overall PID loop, which is why we need extrapolation.
 
@@ -89,8 +89,8 @@ In the graphs, we see that the distances from the wall change discretely, meanin
 
 From the data received above from the P controller test, we get that the frequency of the overall P loop is around 106 Hz whereas the TOF sensor frequency is roughly 8 times less than that at 13 Hz. The TOF sensor is 8 times less because after inspecting the TOF data, I noticed that only after around 8 timesteps does the TOF update to a new value. The calculation for these frequencies are below:
 
-[](lab5pics/freq.png)
+![](lab5pics/freq.png)
 
 After finding the frequencies of the main P loop and the TOF sensor, I then implemented a linear extrapolation algorithm to allow for the Arduino to estimate the next possible TOF data using the most recent previously gotten TOF data. The code for this is below:
 
-[](lab5pics/extra.png)
+![](lab5pics/extra.png)
