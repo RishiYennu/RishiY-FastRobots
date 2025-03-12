@@ -17,17 +17,17 @@ The purpose of this lab was to implement linear PID control for the car moving i
 
 In order to send data from the Arduino on the car to the Jupyter python library for data post-processing, I employed a similar method to what I did in Labs 2 and 3 for the IMU and TOF sensors. As you can see from the code below, I sent data over by creating a BLE command and then using the BLE String characteristic to send all the different data. The code below also shows how I sent the kP gain and setpoint over to the Arduino to be ran by the 'P_POSITION_CONTROLLER' command. 
 
-![](lab4pics/ble.png)
+![](lab5pics/ble.png)
 
 After running the command from the notification handler and receiving the data, I processed the data by graphing the motor output and distance from the TOF sensor over the time, which can be seen in the code snippets below.
 
-[](lab4pics/dist.png)
+[](lab5pics/dist.png)
 
-[](lab4pics/speed.png)
+[](lab5pics/speed.png)
 
 On the Arduino end, as I explained before, I used the BLE String characteristic service to write the value of the four arrays I want to be sent to the Jupyter noteook, which can be seen in the code below.
 
-[](lab4pics/ard.png)
+[](lab5pics/ard.png)
 
 # Lab Tasks
 {: .fs-7 }
@@ -59,15 +59,15 @@ My implementation of the P controller is shown in the below code:
 
 First, below is the data necessary to run the controller as well the arrays of size 500 to be sent for data processing.
 
-[](lab4pics/data.png)
+[](lab5pics/data.png)
 
 Next, we have the command that is called in order to start the controller and to collect and send data.
 
-[](lab4pics/command.png)
+[](lab5pics/command.png)
 
 The command invokes the following method used for calculating and writing the motor driver output for a P controller:
 
-[](lab4pics/speedcalc.png)
+[](lab5pics/speedcalc.png)
 
 # Results
 {: .fs-5 }
@@ -78,9 +78,9 @@ Below is a video of the P controller working to reach the goal setpoint:
 
 Below are the graphs of the PWM motor output/speed and distance from the wall over time corresponding to the above video.
 
-[](lab4pics/dgraph.png)
+[](lab5pics/dgraph.png)
 
-[](lab4pics/sgraph.png)
+[](lab5pics/sgraph.png)
 
 In the graphs, we see that the distances from the wall change discretely, meaning that there is a significant difference between the frequency of the long range TOF sensor and the overall PID loop, which is why we need extrapolation.
 
@@ -89,8 +89,8 @@ In the graphs, we see that the distances from the wall change discretely, meanin
 
 From the data received above from the P controller test, we get that the frequency of the overall P loop is around 106 Hz whereas the TOF sensor frequency is roughly 8 times less than that at 13 Hz. The TOF sensor is 8 times less because after inspecting the TOF data, I noticed that only after around 8 timesteps does the TOF update to a new value. The calculation for these frequencies are below:
 
-[](lab4pics/freq.png)
+[](lab5pics/freq.png)
 
 After finding the frequencies of the main P loop and the TOF sensor, I then implemented a linear extrapolation algorithm to allow for the Arduino to estimate the next possible TOF data using the most recent previously gotten TOF data. The code for this is below:
 
-[](lab4pics/extra.png)
+[](lab5pics/extra.png)
