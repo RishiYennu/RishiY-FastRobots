@@ -1,5 +1,5 @@
 ---
-title: Lab 6
+title: Lab 7
 nav_order: 2
 layout: default
 ---
@@ -88,7 +88,7 @@ The initial condition x, is the starting position of the robot in the Kalman fil
 
 # Implement the Kalman Filter on the Robot
 
-I first tried to implement the Kalman filter on the robot in the following way:
+I first tried to implement the Kalman filter on the robot in the following way by integrating it into my P controller from Lab 5:
 
 ![](lab7pics/kal.png)
 
@@ -98,5 +98,16 @@ I first tried to implement the Kalman filter on the robot in the following way:
 
 ![](lab7pics/KFc.png)
 
+However, I was not able to get it to work very well, so I decided to try to get the interpolation to work since I was not able to get it done in Lab 5. I was able to get to work somewhat, but it could still be improved. I plan to get these working in a much better condition before Lab 8 is finished. Below is the implementation of the interpolation.
+
+![](lab7pics/inter.png)
+
+![](lab7pics/interc.png)
+
+Below are the graphs of the interpolated data and the raw TOF sensor data. The interpolated is the first one and the raw TOF is the second.
+
+![](lab7pics/int.png)
+
+![](lab7pics/norm.png)
 
 
