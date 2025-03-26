@@ -98,7 +98,7 @@ I first tried to implement the Kalman filter on the robot in the following way b
 
 ![](lab7pics/KFc.png)
 
-However, I was not able to get it to work very well, so I decided to try to get the interpolation to work since I was not able to get it done in Lab 5. I was able to get to work somewhat, but it could still be improved. I plan to get these working in a much better condition before Lab 8 is finished. Below is the implementation of the interpolation.
+However, I was not able to get it to work very well on the robot, so I decided to try to get the interpolation to work since I was not able to get it done in Lab 5. I was able to get to work somewhat, but it could still be improved. I plan to get these working in a much better condition before Lab 8 is finished. Below is the implementation of the interpolation.
 
 ![](lab7pics/inter.png)
 
