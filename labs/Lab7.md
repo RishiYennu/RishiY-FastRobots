@@ -70,6 +70,7 @@ As you can see from the above graph, the Kalman filter data is slightly off. Bec
 
 ![](lab7pics/2g.png)
 
+
 The results from the above graph are slightly better, but could still be improved. I then modified to Kalman filter parameters to lower the relative value of the sensor covariance matrix, so that even more trust and less noise is added.
 
 ![](lab7pics/3.png)
