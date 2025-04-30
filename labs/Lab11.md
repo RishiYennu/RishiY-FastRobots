@@ -41,5 +41,26 @@ Finally, on the Python Jupyter notebook end, I implemented the "perform_observat
 # Results
 {: .fs-7 }
 
-Unfortunately, since one of the battery wires of my robot broke, I was not able to demonstrate the Bayes filter with the corresponding images, but I will update this page once I've done so.
+Below are the results of running the Bayes Localization at the four different points:
 
+# (5,3)
+{: .fs-5 }
+
+![](lab11pics/53.png)
+
+# (5,-3)
+{: .fs-5 }
+
+![](lab11pics/5n3.png)
+
+# (0,3)
+{: .fs-5 }
+
+![](lab11pics/03.png)
+
+# (-3,-2)
+{: .fs-5 }
+
+![](lab11pics/n32.png)
+
+Overall, the results of the Bayes Localization is pretty poor, which could be a result of how the robot collects data, which might not align to how the Bayes Algorithm processes it. The point with the best localization was (5,3) likely cause it was in the most distinct location.
