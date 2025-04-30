@@ -1,10 +1,10 @@
 ---
-title: Lab 10
+title: Lab 11
 nav_order: 3
 layout: default
 ---
 
-# Lab 10
+# Lab 11
 {: .fs-9 }
 
 The goal of this lab is to implement a Bayes Filter for localization on the actual robot.
@@ -37,3 +37,9 @@ Then in the main loop, using the "local" boolean variable as the flag, I impleme
 Finally, on the Python Jupyter notebook end, I implemented the "perform_observation_loop" method so that the Bayes filter can function properly and the laptop will be able to receieve the data from the robot.
 
 ![](lab11pics/ble.png)
+
+# Results
+{: .fs-7 }
+
+Unfortunately, since one of the battery wires of my robot broke, I was not able to demonstrate the Bayes filter with the corresponding images, but I will update this page once I've done so.
+
