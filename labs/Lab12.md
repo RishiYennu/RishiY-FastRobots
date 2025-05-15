@@ -33,11 +33,26 @@ Below is the code I did to graph the yaw values for the PID and the bluetooth po
 
 ![](lab12pics/ble.png)
 
-Below are the graphs I made for the PID when moving to different angles (90, 180, -90) respectively:
+Below are the graphs and corresponding videos I made for the PID when moving to different angles (90, 180, -90) respectively:
+
+# 90 degrees
+{: .fs-3 }
+
+[![](https://img.youtube.com/vi/SXDWS-F96bs/0.jpg)](https://www.youtube.com/watch?v=SXDWS-F96bs)
 
 ![](lab12pics/90.png)
 
+# 180 degrees
+{: .fs-3 }
+
+[![](https://img.youtube.com/vi/-ADrjOehpoM/0.jpg)](https://www.youtube.com/watch?v=-ADrjOehpoM)
+
 ![](lab12pics/180.png)
+
+# -90 degrees
+{: .fs-3 }
+
+[![](https://img.youtube.com/vi/Nax_1XDeJLQ/0.jpg)](https://www.youtube.com/watch?v=Nax_1XDeJLQ)
 
 ![](lab12pics/-90.png)
 
@@ -50,11 +65,35 @@ After doing the PID orientation control, I found that open loop control for the 
 
 ![](lab12pics/path.png)
 
+I then implemented the following command and main loop code in order to get the robot to be able to run sequences of movements from just one bluetooth command. The way that it works is that it first gets the number of rotations then the number of translations, after that for how many rotations you gave, it gets the PID values and setpoints for all the them, and then for all the translations it gets the setpoints for the TOF sensor. The way that it works in the main loop, is that it alternates between translations and rotations, which works fine in this case for this path. 
+
 <script src="https://gist.github.com/RishiYennu/0b73f8a3599d46eb6c183fe4a3123203.js"></script>
 
 <script src="https://gist.github.com/RishiYennu/def34aa27f967b2be4537c9651e7aeb3.js"></script>
 
+I then created the following ble command with the following setpoints and PID values:
+
+![](lab12pics/python.png)
+
 # Results
 {: .fs-7 }
 
+The following videos are the best runs of my path, it's possible to get more consistent runs, however, I did not have enough time to completely tune every action in the sequence. Even still, the car was able to make it most of the way through.
 
+[![](https://img.youtube.com/vi/65wh2rLoafE/0.jpg)](https://www.youtube.com/watch?v=65wh2rLoafE)
+
+[![](https://img.youtube.com/vi/Cglh4qTY6Vo/0.jpg)](https://www.youtube.com/watch?v=Cglh4qTY6Vo)
+
+[![](https://img.youtube.com/vi/OEnx4Aq3kNk/0.jpg)](https://www.youtube.com/watch?v=OEnx4Aq3kNk)
+
+# Discussion
+{: .fs-7 }
+
+Some issues I noticed with the path after tuning is that derivative kick from going to -180 to 180 on the DMP would cause a lot of issues, which I was didn't address due to time constraints, additionally I could have made the PID finish more robust by having to wait a few seconds before stopping as sometimes the PID would stop after moving past the setpoint and still count it. This is due to the frequency of the DMP, which meant that the Arduino would get the value after the car has moved past that angle. However, despite this, the car was fairly consistent when running the path, and was able to make it most of the way through.
+
+# References
+{: .fs-7 }
+
+I mainly used TA Mikayla Lahr's Lab 12 for reference on what to do.
+
+Thank you for a great semester!
