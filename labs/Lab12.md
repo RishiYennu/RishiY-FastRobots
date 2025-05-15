@@ -7,7 +7,7 @@ layout: default
 # Lab 12
 {: .fs-9 }
 
-The goal of this lab is to have the robot follow a path.
+The goal of this lab is to have the robo navigate through the map and reach nine different points.
 
 # Strategy
 {: .fs-7 }
